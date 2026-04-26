@@ -189,6 +189,16 @@ def handle_update_plan(msg: dict[str, Any]) -> None:
         )
         emit(
             {
+                "type": "client_action",
+                "action": {
+                    "id": f"plan-refresh-{request_id or 'update'}",
+                    "kind": "view.refresh",
+                    "view_id": "plan.current",
+                },
+            }
+        )
+        emit(
+            {
                 "type": "tool_result",
                 "request_id": request_id,
                 "result": {
