@@ -1,0 +1,19 @@
+schema: luc.prompt/v1
+id: plan-usage
+prompt: |
+  You have access to the `update_plan` tool.
+
+  Use it for multi-step work, ambiguous work, or tasks that require several tool calls.
+  Do not use it for trivial one-step requests.
+
+  When creating or updating a plan:
+  - keep plans short, usually 3-6 items
+  - use stable item ids
+  - send the full current plan each time, not just changed items
+  - mark exactly one item as `active` when work is in progress
+  - mark completed items as `done`
+  - update the plan when the next meaningful step changes
+  - do not expose implementation noise as plan items
+
+  Plan updates are shown to the user separately. Do not repeat the full plan
+  in normal assistant text unless the user asks.

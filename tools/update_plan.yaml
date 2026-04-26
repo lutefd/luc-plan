@@ -1,0 +1,32 @@
+schema: luc.tool/v2
+name: update_plan
+description: Create or update the current task plan and show the update to the user.
+runtime:
+  kind: extension
+  extension_id: plan
+  handler: update_plan
+input_schema:
+  type: object
+  properties:
+    title:
+      type: string
+      description: Short title for the plan update.
+    note:
+      type: string
+      description: Optional short explanation of why the plan changed.
+    items:
+      type: array
+      description: Full current plan. Reuse stable ids when updating existing items.
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            description: Stable item id. Reuse this id for the same task across updates.
+          text:
+            type: string
+          status:
+            type: string
+            enum: [pending, active, done, blocked, canceled]
+        required: [id, text, status]
+  required: [items]

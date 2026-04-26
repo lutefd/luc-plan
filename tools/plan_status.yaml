@@ -1,0 +1,10 @@
+schema: luc.tool/v2
+name: plan_status
+description: Show the current task plan.
+runtime:
+  kind: extension
+  extension_id: plan
+  handler: status
+input_schema:
+  type: object
+  properties: {}

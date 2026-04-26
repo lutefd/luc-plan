@@ -1,0 +1,12 @@
+schema: luc.extension/v1
+id: plan
+protocol_version: 1
+capabilities:
+  - client_actions
+  - extensions.storage.session
+runtime:
+  kind: exec
+  command: ./host.py
+subscriptions:
+  - event: prompt.context
+    mode: sync

@@ -1,0 +1,4 @@
+.luc/logs/
+__pycache__/
+*.pyc
+.luc

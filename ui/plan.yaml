@@ -1,0 +1,16 @@
+schema: luc.ui/v1
+id: plan-ui
+commands:
+  - id: plan.open
+    name: Open Plan
+    description: Show the current task plan.
+    category: Plan
+    action:
+      kind: view.open
+      view_id: plan.current
+views:
+  - id: plan.current
+    title: Plan
+    placement: inspector_tab
+    source_tool: plan_status
+    render: markdown
