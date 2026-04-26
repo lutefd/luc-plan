@@ -1,6 +1,6 @@
 schema: luc.pkg/v1
 module: github.com/lutefd/luc-plan
-version: v0.1.0
+version: v0.1.1
 luc_version: ">=0.1.0"
 name: luc-plan
 description: User-visible planning extension for luc.
