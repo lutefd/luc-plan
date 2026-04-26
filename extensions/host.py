@@ -142,16 +142,20 @@ def render_timeline_note(
     items: list[dict[str, str]],
 ) -> tuple[str, str]:
     previous_items = previous.get("items", []) if previous else []
+    heading = "Updated Plan" if previous_items else "Created Plan"
+    intro_parts = []
+    if title:
+        intro_parts.append(f"**{title}**")
+    if note:
+        intro_parts.append(f"_{note}_")
+    intro = ("\n\n" + "\n\n".join(intro_parts)) if intro_parts else ""
+
     if not previous_items:
-        heading = title or "Created Plan"
-        body = f"### {heading}\n\n{render_plan_items(items)}"
+        body = f"### {heading}{intro}\n\n{render_plan_items(items)}"
     else:
-        heading = title or "Updated Plan"
         changes = diff_plan(previous_items, items)
         changed = "\n".join(changes) if changes else "- No visible changes"
-        body = f"### {heading}\n\nChanged:\n{changed}\n\nCurrent:\n{render_plan_items(items)}"
-    if note:
-        body = body.replace("\n\n", f"\n\n_{note}_\n\n", 1)
+        body = f"### {heading}{intro}\n\nChanged:\n{changed}\n\nCurrent:\n{render_plan_items(items)}"
     return heading, body
 
 
