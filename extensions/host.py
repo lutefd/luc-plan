@@ -15,7 +15,7 @@ from typing import Any
 KNOWN_STATUSES = {"pending", "active", "done", "blocked", "canceled"}
 STATUS_MARKS = {
     "pending": "[ ]",
-    "active": "[>]",
+    "active": "▶️",
     "done": "[x]",
     "blocked": "[!]",
     "canceled": "[-]",

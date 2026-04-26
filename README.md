@@ -63,7 +63,7 @@ An initial `update_plan` emits a **Created Plan** timeline note. Later updates e
 Current item statuses are rendered as:
 
 - `[ ]` pending
-- `[>]` active
+- `▶️` active
 - `[x]` done
 - `[!]` blocked
 - `[-]` canceled
