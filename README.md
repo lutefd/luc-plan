@@ -20,7 +20,7 @@ No luc core changes are required.
 From the package repository:
 
 ```sh
-luc pkg install github.com/lutefd/luc-plan
+luc pkg install github.com/lutefd/luc-plan@latest
 ```
 
 During local development, install from a local checkout:
